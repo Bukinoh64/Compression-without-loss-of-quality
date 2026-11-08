@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сжатие без потери качества</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить на тёмную тему" title="Переключить тему">
+        <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        </svg>
+    </button>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title">Сжатие без потери качества</h1>
+            <p class="hero-subtitle">Поддержка AVIF, WebP, PNG, JPG, DOCX. Максимальная оптимизация без потери качества</p>
+            <div class="supported-formats">
+                <span class="format-badge">AVIF</span>
+                <span class="format-badge">WebP</span>
+                <span class="format-badge">PNG</span>
+                <span class="format-badge">JPG</span>
+                <span class="format-badge">DOCX</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- UPLOAD CARD -->
+            <section class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-area" id="dropZone">
+                        <div class="upload-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h3>Перетащите файлы сюда</h3>
+                        <p>или нажмите для выбора</p>
+                        <button class="btn-primary" id="browseBtn">Выбрать файлы</button>
+                        <input type="file" id="fileInput" accept="image/*,.docx" multiple style="display: none;">
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPRESSION RESULTS -->
+            <section class="results-section">
+                <h2>Результаты сжатия</h2>
+                <div class="results-container"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
